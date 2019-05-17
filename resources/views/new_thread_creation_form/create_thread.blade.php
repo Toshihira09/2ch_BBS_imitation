@@ -11,8 +11,12 @@
   <h1>新規スレッド作成画面</h1>
   <form method="POST">
     {{ csrf_field() }}
-    <input type="text" name="title">
-    <input type="text" name="content">
+    <li>
+      スレッドタイトル <input type="text" name="title">
+    </li>
+    <li>
+      内容 <input type="text" name="content">
+    </li>
     <input type="submit">
   </form>
 </body>
