@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/top_page', 'TopPageController@index');
+
+Route::get('/new_thread_creation_form', 'TopPageController@new_thread_creation');
