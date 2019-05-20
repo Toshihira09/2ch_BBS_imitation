@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ThreadsListTable extends Migration
+class ThreadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class ThreadsListTable extends Migration
      */
     public function up()
     {
-      Schema::create('threads_list', function (Blueprint $table) {
+      Schema::create('threads', function (Blueprint $table) {
         $table->increments('id');
         $table->string('title');
         $table->integer('responses_number');
@@ -29,6 +29,6 @@ class ThreadsListTable extends Migration
      */
     public function down()
     {
-      schema::dropIfExists('threads_list');
+      schema::dropIfExists('threads');
     }
 }

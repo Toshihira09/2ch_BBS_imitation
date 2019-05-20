@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/top_page', 'TopPageController@index');
 
 Route::get('/new_thread_creation_form', 'TopPageController@new_thread_creation');
+Route::post('/new_thread_creation_form', 'ThreadController@create');
+
+Route::get('/top_page', 'ThreadController@index');
+

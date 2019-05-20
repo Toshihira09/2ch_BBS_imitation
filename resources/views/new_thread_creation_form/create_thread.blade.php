@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>新規スレッド作成画面</h1>
-  <form method="POST">
+  <form action='/new_thread_creation_form' method="POST">
     {{ csrf_field() }}
     <li>
       スレッドタイトル <input type="text" name="title">
@@ -17,7 +17,7 @@
     <li>
       内容 <input type="text" name="content">
     </li>
-    <input type="submit">
+    <input type="submit" value="投稿する">
   </form>
 </body>
 </html>

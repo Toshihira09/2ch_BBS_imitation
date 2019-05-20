@@ -11,7 +11,6 @@
   <h1>タイトル</h1>
   <h2>スレッド一覧</h2>
    <div id="thread_list">
-    スレッドのリストが入ります。
   </div>
   <a href="{{ action('TopPageController@new_thread_creation') }}" id="new_create_thread">スレッド新規作成</a>
 </html>
