@@ -8,12 +8,12 @@
   <title>掲示板トップページ</title>
 </head>
 <body>
-  <h1>タイトル</h1>
+  <h1>〜タイトル〜</h1>
   <h2>スレッド一覧</h2>
    <div id="thread_list">
     @foreach ($items as $item)
       <li>
-      <a href="http://127.0.0.1:8002/thread?id={{$item->id}}">{{$item->getData()}}</a>
+      <a href="/thread?id={{$item->id}}">{{$item->getData()}}</a>
       </li>
     @endforeach
   </div>
