@@ -16,7 +16,7 @@ class ThreadsTable extends Migration
       Schema::create('threads', function (Blueprint $table) {
         $table->increments('id');
         $table->string('title');
-        $table->integer('responses_number');
+        $table->string('content');
         $table->dateTime('created_at');
         $table->dateTime('last_responses_date');
       });

@@ -8,6 +8,9 @@ class Thread extends Model
 {
   protected $guarded = array('id');
 
+  const CREATED_AT = 'created_at';
+  const UPDATED_AT = 'last_responses_date';
+
   public static $rules = array(
      'title' => 'required',
      'responses_number' => 'integer'
@@ -15,6 +18,6 @@ class Thread extends Model
 
   public function getData()
   {
-    return $this-> title . ': ' . $this-> responses_number . ': ' . $this-> created_at . ': ' . $this -> last_responses_date;
+    return 'タイトル: ' . $this-> title . ' 作成日時:' . $this-> created_at. ' 最終更新日:' . $this -> last_responses_date . ' 内容:' . $this -> content;
   }
 }
