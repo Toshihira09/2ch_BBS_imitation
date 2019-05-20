@@ -18,6 +18,7 @@ class Thread extends Model
 
   public function getData()
   {
-    return 'タイトル: ' . $this-> title . ' 作成日時:' . $this-> created_at. ' 最終更新日:' . $this -> last_responses_date . ' 内容:' . $this -> content;
+    return 'ID: ' . $this-> id . 'タイトル: ' . $this-> title . ' 作成日時:' . $this-> created_at. ' 最終更新日:' . $this -> last_responses_date . ' 内容:' . $this -> content;
   }
+
 }

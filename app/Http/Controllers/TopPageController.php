@@ -15,7 +15,4 @@ class TopPageController extends Controller
     return view('new_thread_creation_form.create_thread');
   }
 
-  public function show_thread() {
-    return view('layouts.thread');
-  }
 }

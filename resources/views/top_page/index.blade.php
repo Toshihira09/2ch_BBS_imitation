@@ -13,9 +13,9 @@
    <div id="thread_list">
     @foreach ($items as $item)
       <li>
-      <a>{{$item->getData()}}</a>
+      <a href="http://127.0.0.1:8002/thread?id={{$item->id}}">{{$item->getData()}}</a>
       </li>
     @endforeach
   </div>
-  <a href="{{ action('TopPageController@new_thread_creation') }}" id="new_create_thread">スレッド新規作成</a>
+  <a href="{{ action('TopPageController@new_thread_creation') }}">スレッド新規作成</a>
 </html>

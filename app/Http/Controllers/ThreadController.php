@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ThreadController extends Controller
 {
-  public function index(Request $request)
+    public function index(Request $request)
   {
     $items = Thread::all();
     return view('top_page.index', ['items' => $items]);
@@ -21,6 +21,20 @@ class ThreadController extends Controller
     unset($form['_token']);
     $thread->fill($form)->save();
     return redirect('/top_page');
+  }
+
+  public function thread(Request $request) {
+    $thread = Thread::find($request->id);
+    return view('thread_page.thread_page', ['form' => $thread]);
+  }
+
+  public function show_thread(Requesat $request){
+    $this->validate($request, Thread::$rules);
+    $thred = Thread::find($request->id);
+    $form = $request->all();
+    unset($form['_token']);
+    $thread->fill($form)->save();
+    return redirecet('/thread_page');
   }
 }
 
