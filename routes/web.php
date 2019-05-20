@@ -22,3 +22,4 @@ Route::post('/new_thread_creation_form', 'ThreadController@create');
 
 Route::get('/top_page', 'ThreadController@index');
 
+Route::get('/thread', 'TopPageController@show_thread');
