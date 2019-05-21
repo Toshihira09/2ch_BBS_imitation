@@ -11,11 +11,15 @@
   <h1>〜タイトル〜</h1>
   <h2>スレッド一覧</h2>
    <div id="thread_list">
-    @foreach ($items as $item)
-      <li>
-      <a href="/thread?id={{$item->id}}">{{$item->getData()}}</a>
-      </li>
-    @endforeach
+    @if (count($errors) > 0)
+      <p>まだスレッドはありません</p>
+    @else
+      @foreach ($items as $item)
+        <li>
+        <a href="{{ action('ThreadController@thread', $item->id) }}">{{$item->getData()}}</a>
+        </li>
+      @endforeach
+    @endif
   </div>
   <a href="{{ action('TopPageController@new_thread_creation') }}">スレッド新規作成</a>
 </html>

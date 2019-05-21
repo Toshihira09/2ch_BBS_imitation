@@ -23,7 +23,7 @@ Route::get('/top_page', 'ThreadController@index');
 Route::get('/new_thread_creation_form', 'TopPageController@new_thread_creation');
 Route::post('/new_thread_creation_form', 'ThreadController@create');
 
-Route::get('/thread', 'ThreadController@thread');
+Route::get('/thread/{id}', 'ThreadController@thread');
 
 Route::post('/top_page', 'ThreadController@show_thread');
 

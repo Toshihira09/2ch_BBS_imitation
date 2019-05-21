@@ -11,6 +11,9 @@ class TopPageController extends Controller
     return view('top_page.index');
   }
 
+  public function to_thread() {
+  }
+
   public function new_thread_creation() {
     return view('new_thread_creation_form.create_thread');
   }
