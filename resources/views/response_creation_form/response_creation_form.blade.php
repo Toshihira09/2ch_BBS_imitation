@@ -9,6 +9,7 @@
 </head>
 <body>
   <h1>レス作成画面</h1>
+  <h2>{{ $form }}</h2>
   <form action='/response_creation_form' method="POST">
     {{ csrf_field() }}
     <li>

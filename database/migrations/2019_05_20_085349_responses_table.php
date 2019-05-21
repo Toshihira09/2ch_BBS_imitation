@@ -14,6 +14,8 @@ class ResponsesTable extends Migration
     public function up()
     {
       schema::create('responses', function (Blueprint $table) {
+        $table->increments('id');
+        $table->integer('thread_number');
         $table->string('content');
         $table->dateTime('created_at');
       });

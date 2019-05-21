@@ -9,11 +9,11 @@
 </head>
 <body>
   <h1>@yield ('title')</h1>
+  <h2>@yield('id')</h2>
     <div id="thread_content">
     @yield ('content')
     </div>
-    <div>{{$form}}</div>
     <div class="response"></div>
-  <a href="{{ action('ResponseController@to_response_creation_form') }}" id="new_create_thread">レスを投稿する</a>
+  <a href="{{ action('ResponseController@to_response_creation_form', $form->id) }}" id="new_create_thread">レスを投稿する</a>
 </body>
 </html>

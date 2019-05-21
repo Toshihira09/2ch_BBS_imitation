@@ -4,15 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Thread;
 use Illuminate\Http\Request;
+use App\Response;
 
 class ThreadController extends Controller
 {
-    public function index(Request $request)
-  {
-    $items = Thread::all();
-    return view('top_page.index', ['items' => $items]);
-  }
-
   public function create(Request $request)
   {
     $this->validate($request, Thread::$rules);
