@@ -18,13 +18,12 @@ Route::get('/', function () {
 
 Route::get('/top_page', 'TopPageController@index');
 
-Route::get('/new_thread_creation_form/', 'TopPageController@new_thread_creation');
+Route::get('/new_thread_creation_form', 'TopPageController@new_thread_creation');
+
 Route::post('/new_thread_creation_form', 'ThreadController@create');
 
 Route::get('/thread/{id}', 'ThreadController@thread');
 
-Route::post('/top_page', 'ThreadController@show_thread');
+Route::get('/response_creation_form/{id}', 'ResponseController@to_response_creation_form');
 
-Route::get('/response_creation_form', 'ResponseController@to_response_creation_form');
-
-Route::post('/thread/{id}', 'ResponseController@create');
+Route::post('/response_creation_form/{id}', 'ResponseController@create');

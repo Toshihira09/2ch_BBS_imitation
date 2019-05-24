@@ -10,10 +10,17 @@
 <body>
   <h1>@yield ('title')</h1>
   <h2>@yield('id')</h2>
+  <h3>{{$items}}</h3>
     <div id="thread_content">
     @yield ('content')
     </div>
-    <div class="response"></div>
-  <a href="{{ action('ResponseController@to_response_creation_form', $form->id) }}" id="new_create_thread">レスを投稿する</a>
+    <div class="response">
+      @foreach ($items as $items)
+        <ul>
+         <li>{{$items->getData()}}</li>
+        </ul>
+      @endforeach
+    </div>
+  <a href="{{ action('ResponseController@to_response_creation_form', $thread->id) }}" id="new_create_thread">レスを投稿する</a>
 </body>
 </html>

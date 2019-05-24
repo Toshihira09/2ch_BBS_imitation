@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>新規スレッド作成画面</h1>
-  <form action='/new_thread_creation_form' method="POST">
+  <form action='/new_thread_creation_form' method="post">
     {{ csrf_field() }}
     <li>
       スレッドタイトル <input type="text" name="title">

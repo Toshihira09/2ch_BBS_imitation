@@ -15,7 +15,7 @@ class ResponsesTable extends Migration
     {
       schema::create('responses', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('thread_number');
+        $table->integer('thread_id');
         $table->string('content');
         $table->dateTime('created_at');
       });

@@ -20,16 +20,9 @@ class ThreadController extends Controller
 
   public function thread(Request $request) {
     $thread = Thread::find($request->id);
-    return view('thread_page.thread_page', ['form' => $thread]);
+    $items = Thread::find($request->id)->responses;
+    return view('thread_page.thread_page', [ 'items' => $items, 'thread' => $thread]);
   }
 
-  public function show_thread(Requesat $request){
-    $this->validate($request, Thread::$rules);
-    $thred = Thread::find($request->id);
-    $form = $request->all();
-    unset($form['_token']);
-    $thread->fill($form)->save();
-    return redirecet('/thread_page');
-  }
 }
 

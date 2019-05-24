@@ -1,7 +1,7 @@
 @extends ('layouts.thread')
 
-@section ('title', $form->title)
+@section ('title', $thread->title)
 
-@section ('id', $form->id)
+@section ('id', $thread->id)
 
-@section ('content', $form->content)
+@section ('content', $thread->content)
