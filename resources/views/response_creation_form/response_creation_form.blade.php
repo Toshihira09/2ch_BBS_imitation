@@ -9,8 +9,8 @@
 </head>
 <body>
   <h1>レス作成画面</h1>
-  <h2>{{$form ->id}}</h2>
-  <form action='/response_creation_form/{id}' method="post">
+  <h2>{{$thread ->id}}</h2>
+  <form action='/response_creation_form/{{$thread->id}}' method="post">
     {{ csrf_field() }}
     <li>
       内容 <input type="text" name="content">

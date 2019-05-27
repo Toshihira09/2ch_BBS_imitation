@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Response extends Model
 {
-  protected $guarded = array('id');
+  //protected $guarded = array('id');
 
   const CREATED_AT = 'created_at';
   const UPDATED_AT = null;

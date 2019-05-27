@@ -10,7 +10,7 @@
 <body>
   <h1>@yield ('title')</h1>
   <h2>@yield('id')</h2>
-  <h3>{{$items}}</h3>
+  <h3>{{$thread}}</h3>
     <div id="thread_content">
     @yield ('content')
     </div>
@@ -21,6 +21,6 @@
         </ul>
       @endforeach
     </div>
-  <a href="{{ action('ResponseController@to_response_creation_form', $thread->id) }}" id="new_create_thread">レスを投稿する</a>
+  <a href="{{ action('ResponseController@to_response_creation_form', $thread) }}" id="new_create_thread">レスを投稿する</a>
 </body>
 </html>

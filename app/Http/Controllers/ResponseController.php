@@ -12,17 +12,28 @@ class ResponseController extends Controller
   public function to_response_creation_form(Request $request){
     $thread = Thread::find($request->id);
     $response = Response::find($request);
-    return view('response_creation_form.response_creation_form', ['form' => $thread]);
+    dump($thread->all());
+    dump($thread->id);
+    dump($thread);
+    dump($response);
+    return view('response_creation_form.response_creation_form', ['thread' => $thread]);
   }
 
 
   public function create(Request $request){
-    $this->validate($request, Response::$rules);
-    $response = new Response;
-    $form = $request->all();
-    unset($form['_token']);
-    $response->fill($form)->save();
-    return redirect('/thread/{id}');
+    //$this->validate($request, Response::$rules);
+    //response = new Response();
+    //form = $request->all();
+    //nset($form['_token']);
+    //response->fill($form)->save();
+    $response = Thread::find($request->id);
+    dump($request->all());
+    dump($request->id);
+    dump($response);
+    dump($request->get('content',[]));
+    $response->save();
+    $response->responses()->createMany($request->get('array:2',[]));
+    //return redirect('/thread/{$request->id}', ['thread' => $thread]);
   }
     //
 }
