@@ -26,14 +26,16 @@ class ResponseController extends Controller
     //form = $request->all();
     //nset($form['_token']);
     //response->fill($form)->save();
-    $response = Thread::find($request->id);
-    dump($request->all());
-    dump($request->id);
-    dump($response);
+    $thread = Thread::find($request->id);
+  //  dump($request->all());
+  // dump($request->id);
     dump($request->get('content',[]));
-    $response->save();
-    $response->responses()->createMany($request->get('array:2',[]));
-    //return redirect('/thread/{$request->id}', ['thread' => $thread]);
+  // dump($thread);
+  // dump($thread->responses());
+    dump($request->id);
+    dump($thread->responses()->create(['content' => $request->get('content',[])]));
+    $thread->responses()->create(['content' => $request->get('content',[])]);
+    return redirect('/thread/{$request->id}', ['thread' => $request]);
   }
     //
 }

@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Response extends Model
 {
   //protected $guarded = array('id');
+  protected $fillable = [
+    'content'
+  ];
 
   const CREATED_AT = 'created_at';
   const UPDATED_AT = null;
 
   public static $rules = array(
-     'content' => 'required'
+     //'content' => 'required'
    );
 
   public function threads()
