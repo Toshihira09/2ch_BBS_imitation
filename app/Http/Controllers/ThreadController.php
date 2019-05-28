@@ -20,12 +20,7 @@ class ThreadController extends Controller
 
   public function thread(Request $request) {
     $thread = Thread::find($request->id);
-    dump($request);
-    dump($request->all());
-    dump($request->id);
-    dump($thread);
     $items = Thread::find($request->id)->responses;
-    dump($items);
     return view('thread_page.thread_page', [ 'items' => $items, 'thread' => $thread]);
   }
 
