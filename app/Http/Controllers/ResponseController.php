@@ -19,7 +19,7 @@ class ResponseController extends Controller
   public function create(Request $request){
     $thread = Thread::find($request->id);
     $thread->responses()->create(['content' => $request->get('content')]);
-    return redirect()->route('thread.show', ['id' => $request->id]);//('/thread/{$request->id}', ['request' => $request]);
+    return redirect()->route('thread.show', ['id' => $request->id]);
   }
     //
 }
