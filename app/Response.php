@@ -25,7 +25,7 @@ class Response extends Model
 
   public function getData()
   {
-    return 'ID: ' . $this-> id . ': ' . $this-> content . ' 作成日時:' . $this-> created_at;
+    return $this-> content . ' 作成日時:' . $this-> created_at;
   }
     //
 }

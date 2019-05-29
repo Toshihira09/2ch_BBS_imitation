@@ -19,5 +19,6 @@
       まだスレッドはありません
     @endforelse
   </div>
+  {{ $threads->links() }}
   <a href="{{ action('TopPageController@newThreadCreation') }}">スレッド新規作成</a>
 </html>

@@ -21,7 +21,8 @@ class ThreadController extends Controller
   public function thread(Request $request) {
     $thread = Thread::find($request->id);
     $responses = Thread::find($request->id)->responses;
-    return view('thread_page.thread_page', [ 'responses' => $responses, 'thread' => $thread]);
+    $response_pages =Response::paginate(10);
+    return view('thread_page.thread_page', [ 'responses' => $responses, 'thread' => $thread, 'response_pages' => $response_pages]);
   }
 
 }

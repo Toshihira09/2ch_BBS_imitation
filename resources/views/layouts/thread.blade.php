@@ -11,16 +11,10 @@
   <h1>@yield ('title')</h1>
   <h2>@yield('id')</h2>
     <div id="thread_content">
-    @yield ('content')
+      @yield ('content')
     </div>
     <div class="response">
-      @forelse ($responses as $responses)
-        <ul>
-         <li>{{$responses->getData()}}</li>
-        </ul>
-      @empty
-        まだスレは投稿されていません。
-      @endforelse
+      @yield ('response')
     </div>
   <a href="{{ action('ResponseController@toResponseCreationForm', $thread) }}" id="new_create_thread">レスを投稿する</a>
 </body>

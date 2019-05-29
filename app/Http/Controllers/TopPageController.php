@@ -10,7 +10,9 @@ use App\Response;
 class TopPageController extends Controller
 {
   public function index(Request $request) {
-    $threads = Thread::all();
+    $threads = Thread::paginate(10);
+    //$threads = Thread::all();
+    //$data = Thread::paginate(10);
     return view('top_page.index', ['threads' => $threads]);
   }
 
