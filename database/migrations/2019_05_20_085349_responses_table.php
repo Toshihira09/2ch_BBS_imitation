@@ -18,6 +18,7 @@ class ResponsesTable extends Migration
         $table->integer('thread_id');
         $table->string('content');
         $table->dateTime('created_at');
+        $table->dateTime('updated_at');
       });
     }
 

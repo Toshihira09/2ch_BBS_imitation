@@ -12,7 +12,7 @@ class Response extends Model
   ];
 
   const CREATED_AT = 'created_at';
-  const UPDATED_AT = null;
+  const UPDATED_AT = 'updated_at';
 
   public static $rules = array(
      //'content' => 'required'
@@ -20,7 +20,7 @@ class Response extends Model
 
   public function threads()
   {
-    return $this->belongTo('App\Thread', 'thread_id', 'id');
+    return $this->belongTo('App\Thread');
   }
 
   public function getData()
