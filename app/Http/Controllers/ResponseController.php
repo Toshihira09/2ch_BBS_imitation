@@ -9,7 +9,7 @@ use App\Response;
 
 class ResponseController extends Controller
 {
-  public function to_response_creation_form(Request $request){
+  public function toResponseCreationForm(Request $request){
     $thread = Thread::find($request->id);
     $response = Response::find($request);
     return view('response_creation_form.response_creation_form', ['thread' => $thread]);

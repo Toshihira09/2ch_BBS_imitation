@@ -9,12 +9,12 @@ use App\Response;
 
 class TopPageController extends Controller
 {
-  public function index() {
-    $items = Thread::all();
-    return view('top_page.index', ['items' => $items]);
+  public function index(Request $request) {
+    $threads = Thread::all();
+    return view('top_page.index', ['threads' => $threads]);
   }
 
-  public function new_thread_creation() {
+  public function newThreadCreation() {
     return view('new_thread_creation_form.create_thread');
   }
 

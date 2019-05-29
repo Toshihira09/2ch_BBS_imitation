@@ -19,9 +19,9 @@
          <li>{{$responses->getData()}}</li>
         </ul>
       @empty
-        まだレスは投稿されていません。
+        まだスレは投稿されていません。
       @endforelse
     </div>
-  <a href="{{ action('ResponseController@to_response_creation_form', $thread) }}" id="new_create_thread">レスを投稿する</a>
+  <a href="{{ action('ResponseController@toResponseCreationForm', $thread) }}" id="new_create_thread">レスを投稿する</a>
 </body>
 </html>

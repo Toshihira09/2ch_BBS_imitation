@@ -20,7 +20,7 @@ class Response extends Model
 
   public function threads()
   {
-    return $this->belongTo('App\Thread');
+    return $this->belongTo('App\Thread', 'thread_id', 'id');
   }
 
   public function getData()

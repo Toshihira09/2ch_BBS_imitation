@@ -18,12 +18,14 @@ class Thread extends Model
 
   public function responses()
   {
-    return $this->hasMany('App\Response');
+    return $this->hasMany('App\Response', 'thread_id', 'id');
   }
 
   public function getData()
   {
-    return 'ID: ' . $this-> id . 'タイトル: ' . $this-> title . ' 作成日時:' . $this-> created_at. ' 最終更新日:' . $this -> last_responses_date . ' 内容:' . $this -> content;
+    $response_number = Response::where('Thread_id', $this->id)->count();
+    return 'ID: ' . $this-> id . 'タイトル: ' . $this-> title . ' 作成日時:' . $this-> created_at. ' 最終更新日:' 
+      . $this -> last_responses_date . ' 内容:' . $this -> content . ' レス数:' . $response_number;
   }
 
 }
