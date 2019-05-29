@@ -23,7 +23,7 @@ class Thread extends Model
 
   public function getData()
   {
-    $response_number = Response::where('Thread_id', $this->id)->count();
+    $response_number = $this->responses()->count();
     if ($response_number == 0)
       $updated_at = $this-> last_responses_date;
     else
