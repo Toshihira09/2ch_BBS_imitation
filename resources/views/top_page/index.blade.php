@@ -12,13 +12,15 @@
   <h2>スレッド一覧</h2>
    <div id="thread_list">
     @forelse ($threads as $thread)
-      <li>
+      <div>
         <a href="{{ action('ThreadController@thread', $thread->id) }}">{{$thread->getData()}}</a>
-      </li>
+      </div>
     @empty
       まだスレッドはありません
     @endforelse
   </div>
-  {{ $threads->links() }}
+  <div>
+    {{ $threads->links() }}
+  </div>
   <a href="{{ action('TopPageController@newThreadCreation') }}">スレッド新規作成</a>
 </html>

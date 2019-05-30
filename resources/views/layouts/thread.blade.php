@@ -9,7 +9,7 @@
 </head>
 <body>
   <h1>@yield ('title')</h1>
-  <h2>@yield('id')</h2>
+  <h2>@yield('thread_detail')</h2>
     <div id="thread_content">
       @yield ('content')
     </div>
