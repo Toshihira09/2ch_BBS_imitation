@@ -4,7 +4,7 @@
   <meta http-equiv="content-language" content="ja">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="css/top_page/style.css">
+  <link rel="stylesheet" href="css/thread/style.css">
   <title>@yield ('title')</title>
 </head>
 <body>
@@ -15,6 +15,9 @@
     </div>
     <div class="response">
       @yield ('response')
+    </div>
+    <div>
+      @yield ('page_link')
     </div>
   <a href="{{ action('ResponseController@toResponseCreationForm', $thread) }}" id="new_create_thread">レスを投稿する</a>
 </body>

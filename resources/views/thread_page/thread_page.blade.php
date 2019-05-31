@@ -19,3 +19,7 @@
      まだスレは投稿されていません。
    @endforelse
 @endsection
+
+@section ('page_link')
+  {{ $response_page }}
+@endsection

@@ -23,8 +23,7 @@ class Thread extends Model
 
   public function getResponseCount()
   {
-    $response_number = $this->responses->count();
-    return $response_number;
+    return $response_number = $this->responses->count();
   }
 
   public function getThreadApdatedAt()
