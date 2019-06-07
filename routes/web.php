@@ -21,6 +21,10 @@ Route::get('/top_page', 'TopPageController@index');
 
 Route::get('/new_thread_creation_form', 'TopPageController@newThreadCreation');
 
+Route::get('/edit_thread', 'TopPageController@showThreadEdit');
+
+Route::post('/edit_thread', 'TopPageController@threadEdit');
+
 Route::post('/new_thread_creation_form', 'ThreadController@create');
 
 Route::get('/thread/{id}', 'ThreadController@thread')->name('thread.show');
@@ -28,3 +32,4 @@ Route::get('/thread/{id}', 'ThreadController@thread')->name('thread.show');
 Route::get('/response_creation_form/{id}', 'ResponseController@toResponseCreationForm');
 
 Route::post('/response_creation_form/{id}', 'ResponseController@create');
+
