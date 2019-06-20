@@ -21,9 +21,9 @@ Route::get('/top_page', 'TopPageController@index');
 
 Route::get('/new_thread_creation_form', 'TopPageController@newThreadCreation');
 
-Route::get('/edit_response', 'ResponseController@showResponseEdit');
+Route::get('/edit_response/{id}', 'ResponseController@showResponseEdit');
 
-Route::post('/edit_response', 'ResponseController@responseEdit');
+Route::post('/edit_response/{id}', 'ResponseController@responseEdit');
 
 Route::post('/new_thread_creation_form', 'ThreadController@create');
 

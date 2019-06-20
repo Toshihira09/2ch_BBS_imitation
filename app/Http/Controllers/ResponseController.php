@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\LengthAwarePaginator;
 use App\Thread;
 use App\Response;
 
@@ -22,8 +23,9 @@ class ResponseController extends Controller
     return redirect()->route('thread.show', ['id' => $request->id]);
   }
 
-  public function showResponseEdit() {
-    return view('edit_page.edit_response');
+  public function showResponseEdit(Request $request) {
+    $response = Response::find($request->id);
+    return view('edit_page.edit_response', ['response' => $response]);
   }
 
   public function editResponse(Request $request) {

@@ -13,7 +13,7 @@
 @section ('response')
    @forelse ($responses as $responses)
      <ul>
-      <li>{{$responses->getData()}}<br><a href="{{ action('ResponseController@showResponseEdit') }}">編集する</a></li>
+      <li>{{$responses->getData()}}<br><a href="{{ action('ResponseController@showResponseEdit', $responses->id) }}">編集する</a><br>{{ $responses->id }}</li>
      </ul>
    @empty
      まだレスは投稿されていません。
