@@ -21,5 +21,14 @@ class ResponseController extends Controller
     $thread->responses()->create(['content' => $request->get('content')]);
     return redirect()->route('thread.show', ['id' => $request->id]);
   }
+
+  public function showResponseEdit() {
+    return view('edit_page.edit_response');
+  }
+
+  public function editResponse(Request $request) {
+    $this -> validate($request, Thread::$rules);
+  }
+
     //
 }

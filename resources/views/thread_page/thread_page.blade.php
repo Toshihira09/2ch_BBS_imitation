@@ -13,10 +13,10 @@
 @section ('response')
    @forelse ($responses as $responses)
      <ul>
-      <li>{{$responses->getData()}}</li>
+      <li>{{$responses->getData()}}<br><a href="{{ action('ResponseController@showResponseEdit') }}">編集する</a></li>
      </ul>
    @empty
-     まだスレは投稿されていません。
+     まだレスは投稿されていません。
    @endforelse
 @endsection
 

@@ -17,14 +17,4 @@ class TopPageController extends Controller
   public function newThreadCreation() {
     return view('new_thread_creation_form.create_thread');
   }
-
-  public function showThreadEdit() {
-    return view('edit_page.edit_thread');
-  }
-
-  public function editThread(Request $request) {
-    $this -> validate($request, Thread::$rules);
-    $thread = Thread::find;
-  }
-
 }
