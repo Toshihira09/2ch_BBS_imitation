@@ -31,7 +31,7 @@ class Thread extends Model
     if ($this->getResponseCount() == 0)
       $updated_at = $this-> last_responses_date;
     else
-      $updated_at = Response::where('Thread_id', $this->id)->pluck('updated_at')->last();
+      $updated_at = Response::where('thread_id', $this->id)->pluck('updated_at')->last();
     return $updated_at;
   }
 
