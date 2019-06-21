@@ -29,7 +29,12 @@ class ResponseController extends Controller
   }
 
   public function editResponse(Request $request) {
-    $this -> validate($request, Thread::$rules);
+    $this->validate($request, Response::$rules);
+    $response = Response::find($request->id);
+    $form = $request->all();
+    unset($form['_token']);
+    $response->fill($form)->save();
+    return redirect()->route('thread.show', ['id' => $response->thread_id]);
   }
 
     //

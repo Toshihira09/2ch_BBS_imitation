@@ -7,7 +7,7 @@
 @endsection
 
 @section ('form')
-  <form action='/' method="post">
+  <form action='/edit_response/{{ $response->id }}' method="post">
     {{ csrf_field() }}
     <a>
       変更する内容: <input type="text" name="content">
