@@ -14,6 +14,7 @@
     @forelse ($threads as $thread)
       <div>
         <a href="{{ action('ThreadController@thread', $thread->id) }}">{{$thread->getData()}}</a>
+        <a href="{{ action('ThreadController@showThreadEdit', $thread->id) }}">編集する</a>
       </div>
     @empty
       まだスレッドはありません

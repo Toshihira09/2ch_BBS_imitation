@@ -18,6 +18,11 @@ class Response extends Model
      //'content' => 'required'
    );
 
+  public function getTime()
+  {
+    return array($this-> created_at, $this-> updated_at);
+  }
+
   public function threads()
   {
     return $this->belongTo('App\Thread');
@@ -25,13 +30,15 @@ class Response extends Model
 
   public function getData()
   {
-    $_created_at = $this-> created_at;
-    $_updated_at = $this-> updated_at;
-    if ($_created_at == $_updated_at){
-      return $this-> content . ' 作成日時:' . $_created_at;
+    $time = $this->getTime();
+    $_created_at = $time[0];
+    $_updated_at = $time[1];
+    if ($time[0] == $time[1]){
+      return $this-> content . ' 作成日時:' . $time[0];
     } else {
-      return $this-> content . ' 編集日時:' . $_updated_at;
+      return $this-> content . ' 編集日時:' . $time[1];
     }
   }
+
     //
 }

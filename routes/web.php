@@ -25,6 +25,10 @@ Route::get('/edit_response/{id}', 'ResponseController@showResponseEdit');
 
 Route::post('/edit_response/{id}', 'ResponseController@editResponse');
 
+Route::get('/edit_thread/{id}', 'ThreadController@showThreadEdit');
+
+Route::post('/edit_thread/{id}', 'ThreadController@editThread');
+
 Route::post('/new_thread_creation_form', 'ThreadController@create');
 
 Route::get('/thread/{id}', 'ThreadController@thread')->name('thread.show');

@@ -28,11 +28,12 @@ class Thread extends Model
 
   public function getThreadApdatedAt()
   {
-    if ($this->getResponseCount() == 0)
-      $updated_at = $this-> last_responses_date;
+    $thread_time = $this-> last_responses_date;
+    $response_time = Response::where('thread_id', $this->id)->pluck('updated_at')->sort()->last();
+    if ($thread_time > $response_time)
+      return $thread_time;
     else
-      $updated_at = Response::where('thread_id', $this->id)->pluck('updated_at')->sort()->last();
-    return $updated_at;
+      return $response_time;
   }
 
   public function getData()

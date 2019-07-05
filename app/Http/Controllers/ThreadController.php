@@ -29,5 +29,20 @@ class ThreadController extends Controller
     return view('thread_page.thread_page', [ 'responses' => $responses, 'thread' => $thread, 'response_count' => $response_count, 'updated_at' => $updated_at, 'response_page' => $response_page]);
   }
 
+  public function showThreadEdit(Request $request) {
+    $thread = Thread::find($request->id);
+    return view('edit_page.edit_thread', ['thread' => $thread]);
+  }
+
+  public function editThread(Request $request) {
+    $this->validate($request, Thread::$rules);
+    $thread = Thread::find($request->id);
+    $updated_at = $thread->last_responses_date;
+    $form = $request->all();
+    unset($form['_token']);
+    $thread->fill($form)->save();
+    return redirect()->route('thread.show', [ 'id' => $thread->id, 'updated_at' => $updated_at ]);
+  }
+
 }
 
