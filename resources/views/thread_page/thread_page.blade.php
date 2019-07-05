@@ -11,6 +11,9 @@
 @section ('content', $thread->content)
 
 @section ('response')
+   <div>
+    <a href="{{ action('TopPageController@index') }}">トップページへ</a>
+   </div>
    @forelse ($responses as $responses)
      <ul>
       <li>{{$responses->getData()}}<br><a href="{{ action('ResponseController@showResponseEdit', $responses->id) }}">編集する</a></li>
