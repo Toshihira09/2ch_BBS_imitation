@@ -4,7 +4,7 @@
   <meta http-equiv="content-language" content="ja">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="css/new_thread_creation_form/style.css">
+  <link rel="stylesheet" href="css/thread/style.css">
   <title>新規スレッド作成</title>
 </head>
 <body>
