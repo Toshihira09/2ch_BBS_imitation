@@ -7,11 +7,11 @@
 @endsection
 
 @section ('form')
-  <form action='/edit_response/{{ $response->id }}' method="post">
+    {{Form::model($response)}}
+    {{Form::open(['action' => ['ResponseController@editResponse',$response->id]])}}
     {{ csrf_field() }}
-    <a>
-      変更する内容: <input type="text" name="content">
-    </a>
-    <input type="submit" value="編集する">
-  </form>
+    <div>
+      {{ Form::label('title', '変更する内容: ') }}{{Form::text('content')}}
+    </div>
+    {{Form::submit('編集する')}}
 @endsection
