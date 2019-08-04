@@ -8,14 +8,14 @@
 @endsection
 
 @section ('form')
-  <form action='/edit_thread/{{ $thread->id }}' method="post">
+    {{Form::model($thread)}}
+    {{Form::open(['action' => ['ThreadController@editThread',$thread->id]])}}
     {{ csrf_field() }}
-    <a>
-      変更するタイトル: <input type="text" name="title">
-    </a></br>
-    <a>
-      変更する内容: <input type="text" name="content">
-    </a></br>
-    <input type="submit" value="編集する">
-  </form>
+    <div>
+      {{ Form::label('title', '変更するタイトル: ') }}{{Form::text('title')}}
+    </div>
+    <div>
+      {{ Form::label('title', '変更する内容: ') }}{{Form::text('content')}}
+    </div>
+    {{Form::submit('編集する')}}
 @endsection
