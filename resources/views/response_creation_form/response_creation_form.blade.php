@@ -1,21 +1,14 @@
-<html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="content-language" content="ja">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="css/new_thread_creation_form/style.css">
-  <title>レス作成</title>
-</head>
-<body>
-  <h1>レス作成画面</h1>
+@extends ('layouts.create')
+
+@section ('title', 'レス作成画面')
+
+@section ('form')
   <h2>{{$thread ->id}}</h2>
-  <form action='/response_creation_form/{{$thread->id}}' method="post">
-    {{ csrf_field() }}
-    <li>
-      内容 <input type="text" name="content">
-    </li>
-    <input type="submit" value="投稿する">
-  </form>
-</body>
-</html>
+  {{Form::model($thread)}}
+  {{Form::open(['action' => ['ResponseController@create',$thread->id]])}}
+  {{ csrf_field() }}
+  <div>
+    {{ Form::label('title', '内容: ') }}{{Form::text('content')}}
+  </div>
+  {{Form::submit('投稿する')}}
+@endsection
